@@ -1,7 +1,107 @@
-<div class="container">
-  <div class="row">
-      <agm-map [latitude]="lat" [longitude]="lng">
-          <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-        </agm-map>
-  </div>
+<div class="row">
+    <ul class="right hide-on-med-and-down">
+        <li><a href="#!">First Sidebar Link</a></li>
+        <li><a href="#!">Second Sidebar Link</a></li>
+      </ul>
+  <ul id="slide-out" class="sidenav fixed">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="">
+      </div>
+      <a href="#user"><img class="circle" src=""></a>
+      <a href="#name"><span class="white-text name">John Doe</span></a>
+      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+    </div></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><a href="#!">Second Link</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+  </ul>
+  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+  <!-- <li *ngFor="let JobQuotation of list;"><b>{{JobQuotation.id}}</b>{{JobQuotation.quo_file}}</li> -->
+  <ul #rightside id="slide-out" class="sidenav no-autoinit sidenavclose">
+    <li>
+      <div class="user-view">
+        <div class="background">
+        </div>
+        <div class="row margin">
+          <div class="col s3">
+            <img class="circle" src="./assets/image/logo.png">
+          </div>
+          <div class="col s9">
+            <h3 class="text">SmartFix</h3>
+          </div>
+        </div>
+        <div class="row" *ngIf="selected">
+          <div class="col s12"><span class="font">{{selected.name}}</span></div>
+          <div class="col s12"><span class="font">{{selected.city}}</span></div>
+        </div>
+      </div>
+    </li>
+
+    <div class="row" *ngFor="let infor of markers">
+      <div class="col s12">
+        <p class="nomargin">{{infor.idfix}} {{infor.status}}</p>
+        <span>{{infor.pump}} / {{infor.handfree}} / {{infor.handoff}}</span>
+        <p class="marginfix20">{{infor.infofix}}</p>
+        <div class="divider"></div>
+      </div>
+    </div>
+  </ul>
+
+  <ul id="slide-out" class="sidenav sidenav-fixed sidenavfix">
+    <li>
+      <div class="col s12 center">
+        <h6>จำนวนงานแจ้งซ่อมทั้งหมด</h6>
+        <div class="divider"></div>
+      </div>
+    </li>
+    <li>
+      <div class="col s12 valign-wrapper">
+        <i class="material-icons small">adjust</i>
+        <span>เสร็จ / ปิดงาน / ยกเลิก</span>
+      </div>
+    </li>
+    <li>
+      <div class="col s12 valign-wrapper">
+        <i class="material-icons small">adjust</i>
+        <span>ดำเนินการซ่อม</span>
+      </div>
+    </li>
+    <li>
+      <div class="col s12 valign-wrapper">
+        <i class="material-icons small">adjust</i>
+        <span>แจ้ง ผรม. ซ่อม</span>
+      </div>
+    </li>
+    <li>
+      <div class="col s12 valign-wrapper">
+        <i class="material-icons small">adjust</i>
+        <span>รอเสนอราคา</span>
+      </div>
+    </li>
+    <li>
+        <div class="col s12 valign-wrapper">
+          <i class="material-icons small">adjust</i>
+          <span>รออนุมัติ</span>
+        </div>
+      </li>
+      <li>
+          <div class="col s12 valign-wrapper">
+            <i class="material-icons small">adjust</i>
+            <span>รอดำเนินการ</span>
+          </div>
+        </li>
+  </ul>
 </div>
+
+<agm-map [latitude]="ThLat" [longitude]="ThLng" [disableDefaultUI]="false">
+  <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m.label, i , m)" [latitude]="m.lat"
+    [longitude]="m.lng" [label]="m.label" [class.selected]="m === selected" [iconUrl]="">
+  </agm-marker>
+</agm-map>
+
+    
+  
