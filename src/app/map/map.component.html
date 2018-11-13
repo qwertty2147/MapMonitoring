@@ -1,29 +1,4 @@
 <div class="row">
-<<<<<<< Updated upstream
-    <ul class="right hide-on-med-and-down">
-        <li><a href="#!">First Sidebar Link</a></li>
-        <li><a href="#!">Second Sidebar Link</a></li>
-      </ul>
-  <ul id="slide-out" class="sidenav fixed">
-    <li><div class="user-view">
-      <div class="background">
-        <img src="">
-      </div>
-      <a href="#user"><img class="circle" src=""></a>
-      <a href="#name"><span class="white-text name">John Doe</span></a>
-      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-    </div></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-  </ul>
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-
-  <!-- <li *ngFor="let JobQuotation of list;"><b>{{JobQuotation.id}}</b>{{JobQuotation.quo_file}}</li> -->
-  <ul #rightside id="slide-out" class="sidenav no-autoinit sidenavclose">
-=======
 
   <agm-map [latitude]="ThLat" [longitude]="ThLng" [disableDefaultUI]="false">
     <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m.label, i , m)" [latitude]="m.lat"
@@ -33,7 +8,6 @@
   <!-- <li *ngFor="let JobQuotation of list;"><b>{{JobQuotation.id}}</b>{{JobQuotation.quo_file}}</li> -->
   
   <ul #rightside id="slide-out" class="sidenav no-autoinit sidenavclose fixed">
->>>>>>> Stashed changes
     <li>
       <div class="user-view">
         <div class="background">
@@ -95,30 +69,6 @@
       </div>
     </li>
     <li>
-<<<<<<< Updated upstream
-        <div class="col s12 valign-wrapper">
-          <i class="material-icons small">adjust</i>
-          <span>รออนุมัติ</span>
-        </div>
-      </li>
-      <li>
-          <div class="col s12 valign-wrapper">
-            <i class="material-icons small">adjust</i>
-            <span>รอดำเนินการ</span>
-          </div>
-        </li>
-  </ul>
-</div>
-
-<agm-map [latitude]="ThLat" [longitude]="ThLng" [disableDefaultUI]="false">
-  <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m.label, i , m)" [latitude]="m.lat"
-    [longitude]="m.lng" [label]="m.label" [class.selected]="m === selected" [iconUrl]="">
-  </agm-marker>
-</agm-map>
-
-    
-  
-=======
       <div class="col s12 valign-wrapper">
         <i class="material-icons small">adjust</i>
         <span>รออนุมัติ</span>
@@ -132,4 +82,3 @@
     </li>
   </ul>
 </div>
->>>>>>> Stashed changes

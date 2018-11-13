@@ -1,17 +1,4 @@
 agm-map {
-<<<<<<< Updated upstream
-  height: 600px;
-}
-
-
-* {
-  font-family: Lato;
-}
-
-a {
-  color: darkblue;
-}
-=======
   height: 100vh;
   width: 100%;
 }
@@ -53,4 +40,3 @@ a {
   border-radius: 25px !important;
   padding: 0 !important
 }
->>>>>>> Stashed changes
