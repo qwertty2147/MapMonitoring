@@ -6,6 +6,7 @@ import { AuthService } from '../auth.service';
 @Injectable({
   providedIn: 'root'
 })
+
 export class MapService {
   headers = new Headers();
   requestOptions = new RequestOptions();
