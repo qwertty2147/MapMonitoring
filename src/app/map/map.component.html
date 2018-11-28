@@ -1,6 +1,6 @@
 <div class="row">
 
-  <agm-map [latitude]="ThLat" [longitude]="ThLng" [disableDefaultUI]="false">
+  <agm-map [latitude]="ThLat" [longitude]="ThLng" >
     <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m.label, i , m)" [latitude]="m.lat"
       [longitude]="m.lng" [label]="m.label" [class.selected]="m === selected" [iconUrl]="">
     </agm-marker>
@@ -37,7 +37,7 @@
     </div>
   </ul>
 
-  <ul id="slide-out" class="sidenav sidenav-fixed sidenavfix">
+  <!-- <ul id="slide-out" class="sidenav sidenav-fixed sidenavfix">
     <li>
       <div class="col s12 center">
         <h6>จำนวนงานแจ้งซ่อมทั้งหมด</h6>
@@ -80,13 +80,9 @@
         <span>รอดำเนินการ</span>
       </div>
     </li>
-  </ul>
-<<<<<<< Updated upstream
+  </ul> -->
+
 </div>
-=======
-<<<<<<< Updated upstream
-</div>
-=======
-</div>
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+
+
+

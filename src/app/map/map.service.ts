@@ -6,14 +6,6 @@ import { AuthService } from '../auth.service';
 @Injectable({
   providedIn: 'root'
 })
-<<<<<<< Updated upstream
-
-=======
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 export class MapService {
   headers = new Headers();
   requestOptions = new RequestOptions();
