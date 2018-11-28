@@ -33,6 +33,7 @@ export class MapService {
     return this.http.post(`${environment.baseUrl}/api/v2/sign_in/users`, { username, password })
       .toPromise()
       .then((response) => response.json() as any)
+      
   }
 
   getJson() {
@@ -41,8 +42,8 @@ export class MapService {
       .then(response => response.json() as any);
   }
 
-  getProduct(id: string) {
-    return this.http.get(`${environment.baseUrl}/api/v2/station_brands/1/users/${id}/problem_reports`, this.requestOptions)
+  getProduct(id: string ) {
+    return this.http.get(`${environment.baseUrl}/api/v2/station_brands/1/users/${id}/problem_reports?Authorization=${this.accessToken}`)
       .toPromise()
       .then(response => response.json() as any);
   }

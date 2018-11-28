@@ -32,16 +32,13 @@ export class MapComponent implements OnInit, AfterViewInit {
   @ViewChild('rightside') rightside: ElementRef
 
   ngOnInit() {
-    // this.LoginService();
+    this.LoginService();
     // this.checkAuthenAndRedirect();
     // this.getDataJson();
     // this.errorMessage = '';
     console.log('test');
-    // this.mapService.login(this.username,this.password)
-    // .then((response)=>{
-    //   this.getAuthor = response.data.access_token;
-    //   console.log('this is get author',this.getAuthor);
-    // });
+    
+
     // this.mapService.getData()
     // .then((response) => {
     //   this.list = response.JobQuotation;
@@ -67,21 +64,31 @@ export class MapComponent implements OnInit, AfterViewInit {
         this.mapService.headers.append('Authorization' , this.mapService.accessToken)
         this.mapService.requestOptions.headers = this.mapService.headers
         this.mapService.requestOptions.withCredentials = true;
-        console.log(this.mapService.requestOptions.headers.get('Authorization'))
-        console.log(this.mapService.requestOptions.withCredentials);
+        
+        console.log ("//////////////this is access token //////////");
+        console.log(this.mapService.requestOptions.headers.get('Authorization'));
+        console.log("get author : ",this.mapService.headers);
+        console.log('actk = ',this.mapService.accessToken);
+        
+        // console.log(this.mapService.requestOptions.withCredentials);
+        
 
 
         // console.log(this.mapService.accessToken);
-
+        this.mapService.getProduct(this.username)
+        
+        .then(resp => {
+        this.getDataJson = resp.data;
+        
+        console.log('log data : ',resp.data);
+        
+      }, error => {
+        console.log('product error ',error);
+      });
       }, error => {
         this.errorMessage = 'Username or password incorrect.';
       });
-    this.mapService.getProduct(this.username)
-      .then(resp => {
-        this.getDataJson = resp.data;
-      }, error => {
-        console.log(error);
-      });
+      
   }
 
   clickedMarker(label: string, index: number) {
